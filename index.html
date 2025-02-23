@@ -4,75 +4,320 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rahul Sharma - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-bottom: 70px;
         }
-        header {
-            background-color: #333;
+
+        .navbar {
+            background-color: var(--primary-color) !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 20px;
+            padding: 80px 0;
+            margin-bottom: 40px;
         }
-        section {
-            padding: 20px;
-            margin: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+
+        .hero-section i{
+            margin: 0 15px;;
         }
-        .container {
-            width: 80%;
-            margin: auto;
+
+        .hero-section a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;  /* Set a fixed size */
+            height: 50px;
+            border-radius: 50%; /* Makes it circular */           
+            transition: background 0.3s ease, transform 0.3s ease;
         }
+
+        .hero-section a[href*="github"]:hover{
+            background-color: black;
+        }
+        .hero-section a[href*="linkedin"]:hover{
+            background-color:#3498db;
+        }
+
+        .section-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 15px 15px 0 0 !important;
+        }
+
+        .skill-item {
+            background-color: #f8f9fa;
+            border-radius: 20px;
+            padding: 8px 15px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .skill-item:hover{
+            background-color: #2097e1;
+            transform: scale(1.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .contact-icon {
+            font-size: 24px;
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+
         footer {
-            background: #333;
+            background-color: var(--primary-color);
             color: white;
-            padding: 10px;
+            padding: 15px 0;
             position: fixed;
-            width: 100%;
             bottom: 0;
+            width: 100%;
         }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 24px;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .typing-effect::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .project-link {
+        color: white;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .project-link:hover {
+        background: var(--secondary-color);
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    .project-features {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 15px;
+        padding: 20px;
+        margin: 20px 0;
+    }
+
+    .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+        padding: 8px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .feature-item:hover {
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .feature-item i {
+        color: var(--secondary-color);
+    }
+
+   
+
+
     </style>
 </head>
 <body>
-    <header>
-        <h1>Rahul Sharma</h1>
-        <p>DevOps Enthusiast | Cloud & Automation</p>
-    </header>
-    <div class="container">
-        <section id="about">
-            <h2>About Me</h2>
-            <p>A proactive Computer Science graduate passionate about DevOps, automation, and cloud technologies.</p>
-        </section>
-        <section id="skills">
-            <h2>Skills</h2>
-            <p><strong>Technical:</strong> Kubernetes, Git, Docker, Java, SQL, Python, HTML, CSS</p>
-            <p><strong>Soft Skills:</strong> Teamwork, Communication, Problem-solving</p>
-        </section>
-        <section id="experience">
-            <h2>Experience</h2>
-            <p><strong>Urbint - SRE Intern</strong> (Jul 2024 - Present)</p>
-            <p>Worked on SRE and DevOps practices, using GitHub Actions for automation.</p>
-            <p><strong>EY-GDS AICTE - College Internship</strong> (Nov 2023 - Jan 2024)</p>
-            <p>Developed an MCQ platform using Django, Bootstrap, and Python.</p>
-        </section>
-        <section id="projects">
-            <h2>Projects</h2>
-            <p><strong>Turf Management:</strong> Created a booking website for sports turfs.</p>
-            <p><strong>Unified Compiler:</strong> Developed a compiler supporting Python, C, C++, Java, and Go.</p>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:rahulsharma822002@gmail.com">rahulsharma822002@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/rahul-sharma-024b6a229" target="_blank">Rahul Sharma</a></p>
-        </section>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">RS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about"><i class="fas fa-user me-2"></i>About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills"><i class="fas fa-code me-2"></i>Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience"><i class="fas fa-briefcase me-2"></i>Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects"><i class="fas fa-project-diagram me-2"></i>Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact"><i class="fas fa-envelope me-2"></i>Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section text-center" >
+        <h1 class="display-4">Rahul Sharma</h1>
+        <p class="lead"><i class="fas fa-cloud me-2"></i>DevOps Enthusiast | Cloud & Automation</p>
+        <a href="https://github.com/Rahul2002Sharma"><i class="fab fa-github fa-2x"></i></a>
+        <a href="https://linkedin.com/in/rahul-sharma-024b6a229"><i class="fab fa-linkedin fa-2x"></i></a>
+
     </div>
-    <footer>
-        <p>&copy; 2025 Rahul Sharma | All Rights Reserved</p>
+
+
+    <div class="container">
+        <!-- About Section -->
+        <div class="card section-card" id="about">
+            <div class="card-header">
+                <h2><i class="fas fa-user me-2"></i>About Me</h2>
+            </div>
+            <div class="card-body">
+                <p class="lead">A proactive Computer Science graduate passionate about DevOps, automation, and cloud technologies.</p>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="card section-card" id="skills">
+            <div class="card-header">
+                <h2><i class="fas fa-code me-2"></i>Skills</h2>
+            </div>
+            <div class="card-body">
+                <h5><i class="fas fa-laptop-code me-2"></i>Technical Skills</h5>
+                <div class="mb-3">
+                    <span class="skill-item"><i class="fab fa-kubernetes me-2"></i>Kubernetes</span>
+                    <span class="skill-item"><i class="fab fa-git-alt me-2"></i>Git</span>
+                    <span class="skill-item"><i class="fab fa-docker me-2"></i>Docker</span>
+                    <span class="skill-item"><i class="fab fa-java me-2"></i>Java</span>
+                    <span class="skill-item"><i class="fas fa-database me-2"></i>SQL</span>
+                    <span class="skill-item"><i class="fab fa-python me-2"></i>Python</span>
+                    <span class="skill-item"><i class="fab fa-html5 me-2"></i>HTML</span>
+                    <span class="skill-item"><i class="fab fa-css3-alt me-2"></i>CSS</span>
+                </div>
+                <h5><i class="fas fa-users me-2"></i>Soft Skills</h5>
+                <div>
+                    <span class="skill-item">Teamwork</span>
+                    <span class="skill-item">Communication</span>
+                    <span class="skill-item">Problem-solving</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="card section-card" id="experience">
+            <div class="card-header">
+                <h2><i class="fas fa-briefcase me-2"></i>Experience</h2>
+            </div>
+            <div class="card-body">
+                <div class="mb-4">
+                    <h5><i class="fas fa-building me-2"></i>Urbint - SRE Intern</h5>
+                    <p class="text-muted">Jul 2024 - Present</p>
+                    <ul>
+                        <li> <strong>CI/CD Automation</strong> – Designed and optimized workflows for automated deployments.</li>
+                        <li><strong>Container Image Management</strong>  – Implemented automation to update container image tags dynamically.</li>
+                        <li><strong>Custom Workflow Components</strong>– Developed reusable actions to streamline and standardize processes. </li>
+                        <li><strong>Pipeline Optimization</strong> – Merged and improved build and deployment steps for better efficiency. </li>
+                        <li><strong>Enhanced System Reliability</strong> – Reduced manual intervention and improved automation consistency. </li>
+                    </ul>
+                </div>
+                <div>
+                    <h5><i class="fas fa-building me-2"></i>EY-GDS AICTE - College Internship</h5>
+                    <p class="text-muted">Nov 2023 - Jan 2024</p>
+                    <ul>
+                        <li>Django-based MCQ Platform with user authentication, allowing admins to create/manage quizzes and students to take tests with real-time scoring.</li>
+                        <li>Automated Quiz Evaluation with dynamic question bank, CRUD operations, and instant results, reducing manual grading effort.</li>
+                        <li>Responsive UI with Bootstrap, featuring a clean design, timer functionality, and mobile-friendly experience for seamless assessments.</li>
+                        <li>Database-driven system (Django + SQL) that stores questions, user responses, and performance analytics, enabling efficient quiz management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="card section-card" id="projects">
+            <div class="card-header">
+                <h2><i class="fas fa-project-diagram me-2"></i>Projects</h2>
+            </div>
+            <div class="card-body">
+                <div class="mb-4">
+                    <h5><i class="fas fa-futbol me-2"></i>Turf Management</h5>
+                    <ul>
+                        <li>Java-based application for managing sports arena bookings, allowing customer registration with name and phone number and retrieval of arena details.</li>
+                        <li>Uses MySQL database for data storage and JDBC for seamless database connectivity.</li>
+                        <li>Features a command-line interface with a menu-driven system for easy navigation and structured data management.</li>
+                        <li>Ensures efficient turf reservations and customer records handling, providing a smooth user experience</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5><i class="fas fa-code me-2"></i>Automated Programming Tools Installer</h5>
+                    <ul>
+                        <li>Automates installation of programming languages, databases, and IDEs</li>
+                        <li>Leverages Scoop for package management and dependency resolution</li>
+                        <li>Features a modern web-based UI built with Electron Forge</li>
+                        <li>Handles Windows UAC permissions seamlessly</li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+
+        
+
+        <!-- Contact Section -->
+        <div class="card section-card" id="contact">
+            <div class="card-header">
+                <h2><i class="fas fa-envelope me-2"></i>Contact</h2>
+            </div>
+            <div class="card-body">
+                <p><i class="fas fa-envelope contact-icon"></i><a href="mailto:rahulsharma822002@gmail.com">rahulsharma822002@gmail.com</a></p>
+                <p><i class="fab fa-linkedin contact-icon"></i><a href="https://linkedin.com/in/rahul-sharma-024b6a229" target="_blank">Rahul Sharma</a></p>
+                <p><i class="fas fa-phone contact-icon"></i>+91 8971110561</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <p><i class="far fa-copyright me-2"></i>2025 Rahul Sharma | All Rights Reserved</p>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
